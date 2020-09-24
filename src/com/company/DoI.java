@@ -50,14 +50,16 @@ public class DoI {
         carList.remove(carString);
     }
 
-    public void updatePrice(){
-
+    public static void updatePrice(){
+        System.out.println("updating car");
     }
 
     public static void printList(){
-
-        }
-
-
+        System.out.println("printing list");
     }
+
+    public static void getDetails(){
+        System.out.println("getting deatails on a car");
+    }
+}
 
