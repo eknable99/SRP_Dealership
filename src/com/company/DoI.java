@@ -3,7 +3,9 @@ import java.util.*;
 
 public class DoI {
 
-    public static HashMap<String, Double> carList = new HashMap<String, Double>();
+    public static HashMap<String, Double> carList = new HashMap<>();
+
+    //carList.put("SUV", 35000);
 
     public DoI(HashMap<String, Double> carList) {
         this.carList = carList;
@@ -70,7 +72,7 @@ public class DoI {
         Iterator it = set.iterator();
         while(it.hasNext()){
             Map.Entry mapEntry = (Map.Entry)it.next();
-            System.out.println("The name is: " + mapEntry.getKey() + "and price is: " + mapEntry.getValue());
+            System.out.println("The name is: " + mapEntry.getKey() + " and price is: " + mapEntry.getValue());
         }
     }
 

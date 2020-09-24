@@ -1,7 +1,7 @@
 package com.company;
 
 public class CFO {
-    double payment;
+    static double payment;
     int numMonths;
     double interestRate = .0038;
     double principle;
@@ -39,7 +39,7 @@ public class CFO {
         this.interestRate = interestRate;
     }
 
-    public double calculatePayment(double principle, double interestRate, int numMonths){
+    public static double calculatePayment(double principle, double interestRate, int numMonths){
         payment = (principle * (1 +(interestRate/12) * numMonths))/ numMonths;
         return payment;
     }
