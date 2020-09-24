@@ -1,8 +1,5 @@
 package com.company;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class DoI {
 
@@ -56,10 +53,23 @@ public class DoI {
 
     public static void printList(){
         System.out.println("printing list");
+        Set set = carList.entrySet();
+        Iterator it = set.iterator();
+        while(it.hasNext()){
+            Map.Entry mapEntry = (Map.Entry)it.next();
+            System.out.println("The name is: " + mapEntry.getKey() + "and price is: " + mapEntry.getValue());
+        }
     }
 
+
     public static void getDetails(){
-        System.out.println("getting deatails on a car");
+        System.out.println("To receive details about a car, please enter the car's name");
+        Scanner scanner = new Scanner(System.in);
+        String carName = scanner.nextLine();
+        getDetails(carName);
+    }
+    public static void getDetails(String carName){
+        System.out.printf("The price of this car is: " + carList.get(carName));
     }
 }
 
