@@ -1,11 +1,14 @@
 package com.company;
 import java.util.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DoI {
 
     public static HashMap<String, Double> carList = new HashMap<>();
 
-    //carList.put("SUV", 35000);
+
 
     public DoI(HashMap<String, Double> carList) {
         this.carList = carList;
@@ -29,26 +32,20 @@ public class DoI {
     public static void removeCar(){
         System.out.println("Please enter the name of the car you wish to remove. To view a list of the cars, type L , case-insensitive");
         Scanner scanner = new Scanner(System.in);
-        String answer = scanner.nextLine();
+        String answer = scanner.next();
 
-        if(answer == "l"){
+        if(answer == "L"){
             printList();
-        } else if(carList.containsKey(answer)){
-            System.out.println("Car found. Are you sure you want to remove this car with price of " + carList.get(answer) + "? - y/n case-Sensitive");
-             if(scanner.next() == "y"){
-                 carList.remove(answer);
-                 System.out.println("The car " + carList.get(answer) + " has been removed.");
-             }
-          }
-           else{
-            System.out.println("car not found");
-            }
         }
 
-    //remove a car based on key (car name)
-    /*public static void removeCar(String carString){
-        carList.remove(carString);
-    }*/
+        else if(carList.containsKey(answer)){
+           carList.remove(answer, carList.get(answer));
+           System.out.println("Car " + carList.get(answer) + " with price of " + carList.get(answer) + "has been deleted!");
+        } else{
+            System.out.println("car not found");
+            }
+     }
+
 
     public static void updatePrice(){
         System.out.println("Please enter the name of the car you wish to update:\n");

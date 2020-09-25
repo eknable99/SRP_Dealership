@@ -17,7 +17,7 @@ public class Main {
 
         boolean cont = true;
 
-        while(cont == true){
+        while(cont){
             System.out.println("\nPlease enter your choice from the list bellow:\nchoices are case-sensitive\nC - Calculate the payments for a car\nL- Get a list of cars\n" +
                     "A- Add a new car to inventory\nR- Remove a car from the Inventory\nU-Update a car in inventory\nD-Get details about a car\nX-Exit");
             Scanner scanner = new Scanner(System.in);
