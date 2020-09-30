@@ -6,9 +6,9 @@ import java.util.Map;
 
 public class DoI {
 
+    //New methods at the end: --------
+
     public static HashMap<String, Double> carList = new HashMap<>();
-
-
 
     public DoI(HashMap<String, Double> carList) {
         this.carList = carList;
@@ -87,6 +87,26 @@ public class DoI {
     //function to call from CFO to receive price of a car
     public static double getPrice(String carName){
         return carList.get(carName);
+    }
+
+
+    //new methods for SRP_Dealership_II
+    //method to print a list of cars with prices after discount
+    public static void printAfterDiscount(){
+        Set set = carList.entrySet();
+        Iterator it = set.iterator();
+        while(it.hasNext()){
+            Map.Entry mapEntry = (Map.Entry)it.next();
+            double newPrice = applyDiscount(VPS.discountRate, (String) mapEntry.getKey());
+            System.out.println("The name is: " + mapEntry.getKey() + " and price after applying discount is: " +
+                    newPrice);
+        }
+    }
+
+    //method to apply discount to each car
+    public static double applyDiscount(double discountRate, String carName){
+        double newPrice = carList.get(carName) * VPS.discountRate /100;
+        return newPrice;
     }
 
 }
