@@ -9,9 +9,11 @@ public class VPS {
         System.out.println("Please enter the number of years for the payments: ");
         Scanner scanner = new Scanner(System.in);
         int numMonths = scanner.nextInt()/12;
-        System.out.println("Do you have a discount? y/n");
-        String discountAnswer = scanner.nextLine();
-        if(discountAnswer == "1"){
+        scanner.nextLine();
+        System.out.println("Do you have a discount? y-n");
+        char discountAnswer = scanner.next().charAt(0);
+
+        if(discountAnswer == 'y'){
             System.out.println("Please enter your discount rate in digits:");
             discountRate = scanner.nextDouble();
         }else{
