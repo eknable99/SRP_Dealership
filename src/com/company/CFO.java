@@ -1,9 +1,10 @@
 package com.company;
+import java.lang.Math;
 
 public class CFO {
     static double payment;
     int numMonths;
-    double interestRate = .0038;
+   public static double interestRate = .0038;
     double principle;
     double downPayment;
 
@@ -41,6 +42,11 @@ public class CFO {
 
     public static double calculatePayment(double principle, double interestRate, int numMonths){
         payment = (principle * (1 +(interestRate/12) * numMonths))/ numMonths;
+        return payment;
+    }
+
+    public static double calculateCompound(String carName, int numMonths, double interestRate){
+        double payment = (DoI.applyDiscount(VPS.discountRate, carName) * interestRate ) / ( 1 - 1 / Math.pow(1 + interestRate, numMonths));
         return payment;
     }
 }

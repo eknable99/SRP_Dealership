@@ -99,13 +99,13 @@ public class DoI {
             Map.Entry mapEntry = (Map.Entry)it.next();
             double newPrice = applyDiscount(VPS.discountRate, (String) mapEntry.getKey());
             System.out.println("The name is: " + mapEntry.getKey() + " and price after applying discount is: " +
-                    newPrice);
+                    newPrice + " and the monthly payment for it would be: " + Math.round(CFO.calculateCompound((String) mapEntry.getKey(), VPS.numMonths, CFO.interestRate)*100.00)/100.0);
         }
     }
 
     //method to apply discount to each car
     public static double applyDiscount(double discountRate, String carName){
-        double newPrice = carList.get(carName) * VPS.discountRate /100;
+        double newPrice = carList.get(carName) - (carList.get(carName) * VPS.discountRate /100);
         return newPrice;
     }
 

@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class VPS {
     public static double discountRate;
+    public static int numMonths;
 
     public static void customerCar(){
         System.out.println("Please enter the number of years for the payments: ");
         Scanner scanner = new Scanner(System.in);
-        int numMonths = scanner.nextInt()/12;
+        numMonths = scanner.nextInt()/12;
         scanner.nextLine();
         System.out.println("Do you have a discount? y-n");
         char discountAnswer = scanner.next().charAt(0);
